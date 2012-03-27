@@ -28,24 +28,37 @@ been included.
 
 ## Configuration  ##
 
-There are a number of options available to adjust the behaviour of Backbone.MapView.
+### Maps API Configuration ###
+
+The options listed here are a list what's required to initialize a map and not 
+the complete configuration reference.  For the full details consult the 
+[Google Maps Reference](https://developers.google.com/maps/documentation/javascript/reference#MapOptions).
+The map will be initialized with all the properties in this hash so you can
+simply define more keys if you want to specify extra options.  All these values 
+are stored in the `mapOpts` property.
 
 * __center__:
-A `google.maps.LatLng` instance that denotes the location on which the map should
-be centered on when it is loaded.
+A `google.maps.LatLng` instance that denotes the initial center of the map.  You
+must specify a value for this property otherwise the map will not load and just
+show a grey background.
 
 ``` javascript
 center: null
 ```
 
-* __mapOpts__:
-A hash of options that are passed to the constructor of the Google Map.
-
+* __mapTypeId__:
+The initial Map [mapTypeId](https://developers.google.com/maps/documentation/javascript/reference#MapTypeId).
 
 ``` javascript
-mapOpts: {
-  zoom: 13
-  mapTypeId: google.maps.MapTypeId.ROADMAP
-  streetViewControl: false
-}
+mapTypeId: google.maps.MapTypeId.ROADMAP
 ```
+
+* __zoom__:
+Initial map zoom level.
+
+``` javascript
+zoom: 15
+```
+
+
+### MapView Configuration ###
