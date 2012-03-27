@@ -25,6 +25,18 @@ been included.
 <script src="/js/backbone.mapview.js"></script>
 ```
 
+## Usage ##
+
+You use Backbone.MapView like a regular view with a few exceptions.
+
+```javascript
+var View = Backbone.MapView.extend({
+  // ... custom view methods here ...
+});
+
+var StreetMap = new View({ id: 'map' });
+$('body').html(StreetMap.render().el);
+```
 
 ## Configuration  ##
 
